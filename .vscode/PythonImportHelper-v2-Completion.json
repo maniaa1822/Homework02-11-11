@@ -1,0 +1,149 @@
+[
+    {
+        "label": "torch",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch",
+        "description": "torch",
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "torch.nn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "functional",
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "isExtraImport": true,
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "sigmoid",
+        "importPath": "libs.math",
+        "description": "libs.math",
+        "isExtraImport": true,
+        "detail": "libs.math",
+        "documentation": {}
+    },
+    {
+        "label": "softmax",
+        "importPath": "libs.math",
+        "description": "libs.math",
+        "isExtraImport": true,
+        "detail": "libs.math",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "libs.models.logistic_regression",
+        "description": "libs.models.logistic_regression",
+        "isExtraImport": true,
+        "detail": "libs.models.logistic_regression",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "libs.models.logistic_regression",
+        "description": "libs.models.logistic_regression",
+        "isExtraImport": true,
+        "detail": "libs.models.logistic_regression",
+        "documentation": {}
+    },
+    {
+        "label": "CustomCNN",
+        "kind": 6,
+        "importPath": "libs.models.custom_cnn",
+        "description": "libs.models.custom_cnn",
+        "peekOfCode": "class CustomCNN(nn.Module):\n    def __init__(self):\n        super(CustomCNN, self).__init__()\n        ##############################\n        ###     YOUR CODE HERE     ###\n        ##############################  \n        # Define the convolutional layers\n        pass\n    def forward(self, x):\n        ##############################",
+        "detail": "libs.models.custom_cnn",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "kind": 6,
+        "importPath": "libs.models.logistic_regression",
+        "description": "libs.models.logistic_regression",
+        "peekOfCode": "class LogisticRegression:\n    def __init__(self, num_features : int):\n        self.parameters = np.random.normal(0, 0.01, num_features)\n    def predict(self, x:np.array) -> np.array:\n        \"\"\"\n        Method to compute the predictions for the input features.\n        Args:\n            x: it's the input data matrix.\n        Returns:\n            preds: the predictions of the input features.",
+        "detail": "libs.models.logistic_regression",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegressionPenalized",
+        "kind": 6,
+        "importPath": "libs.models.logistic_regression_penalized",
+        "description": "libs.models.logistic_regression_penalized",
+        "peekOfCode": "class LogisticRegressionPenalized(LogisticRegression):\n    def __init__(self, num_features: int, lambda_: float = 0.1):\n        super().__init__(num_features)\n        self.lambda_ = lambda_\n    def update_theta(self, gradient: np.array, lr: float = 0.5):\n        \"\"\"\n        Function to update the weights in-place.\n        Args:\n            gradient: the gradient of the log likelihood.\n            lr: the learning rate.",
+        "detail": "libs.models.logistic_regression_penalized",
+        "documentation": {}
+    },
+    {
+        "label": "SoftmaxClassifier",
+        "kind": 6,
+        "importPath": "libs.models.multinomial",
+        "description": "libs.models.multinomial",
+        "peekOfCode": "class SoftmaxClassifier(LogisticRegression):\n    def __init__(self, num_features :int, num_classes:int):\n        self.parameters = np.random.normal(0,1e-3,(num_features, num_classes))\n    def predict(self, X : np.array) -> np.array:\n        \"\"\"\n        Function to compute the raw scores for each sample and each class.\n        Args:\n            X: it's the input data matrix. The shape is (N, H)\n        Returns:\n            scores: it's the matrix containing raw scores for each sample and each class. The shape is (N, K)",
+        "detail": "libs.models.multinomial",
+        "documentation": {}
+    },
+    {
+        "label": "PoorPerformingCNN",
+        "kind": 6,
+        "importPath": "libs.models.poor_cnn",
+        "description": "libs.models.poor_cnn",
+        "peekOfCode": "class PoorPerformingCNN(nn.Module):\n    def __init__(self):\n        super(PoorPerformingCNN, self).__init__()\n        ##############################\n        ###     CHANGE THIS CODE   ###\n        ##############################  \n        self.conv1 = nn.Conv2d(3, 4, kernel_size=3, stride=1, padding=1)\n        self.relu1 = nn.ReLU()\n        self.pool = nn.MaxPool2d(kernel_size=2, stride=2, padding=0)\n        self.conv2 = nn.Conv2d(5, 8, kernel_size=3, stride=1, padding=1)",
+        "detail": "libs.models.poor_cnn",
+        "documentation": {}
+    },
+    {
+        "label": "sigmoid",
+        "kind": 2,
+        "importPath": "libs.math",
+        "description": "libs.math",
+        "peekOfCode": "def sigmoid(x):\n    \"\"\"\n    Function to compute the sigmoid of a given input x.\n    Args:\n        x: it's the input data matrix.\n    Returns:\n        g: The sigmoid of the input x\n    \"\"\"\n    ##############################\n    ###     YOUR CODE HERE     ###",
+        "detail": "libs.math",
+        "documentation": {}
+    },
+    {
+        "label": "softmax",
+        "kind": 2,
+        "importPath": "libs.math",
+        "description": "libs.math",
+        "peekOfCode": "def softmax(y):\n    \"\"\"\n    Function to compute associated probability for each sample and each class.\n    Args:\n        y: the predicted \n    Returns:\n        softmax_scores: it's the matrix containing probability for each sample and each class. The shape is (N, K)\n    \"\"\"\n    ##############################\n    ###     YOUR CODE HERE     ###",
+        "detail": "libs.math",
+        "documentation": {}
+    },
+    {
+        "label": "fit",
+        "kind": 2,
+        "importPath": "libs.optim",
+        "description": "libs.optim",
+        "peekOfCode": "def fit(model, x : np.array, y : np.array, x_val:np.array = None, y_val:np.array = None, lr: float = 0.5, num_steps : int = 500):\n    \"\"\"\n    Function to fit the logistic regression model using gradient ascent.\n    Args:\n        model: the logistic regression model.\n        x: it's the input data matrix.\n        y: the label array.\n        x_val: it's the input data matrix for validation.\n        y_val: the label array for validation.\n        lr: the learning rate.",
+        "detail": "libs.optim",
+        "documentation": {}
+    }
+]
