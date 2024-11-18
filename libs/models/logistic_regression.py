@@ -5,7 +5,7 @@ class LogisticRegression:
     def __init__(self, num_features : int):
         self.parameters = np.random.normal(0, 0.01, num_features)
         
-    def predict(self, x:np.array) -> np.array:
+    def predict(self, x: np.array) -> np.array:
         """
         Method to compute the predictions for the input features.
 
@@ -15,26 +15,26 @@ class LogisticRegression:
         Returns:
             preds: the predictions of the input features.
         """
-        ##############################
-        ###     YOUR CODE HERE     ###
-        ##############################
+        preds = sigmoid(np.dot(x, self.parameters))
         return preds
     
     @staticmethod
-    def likelihood(preds, y : np.array) -> np.array:
+    def likelihood(preds, y: np.array) -> np.array:
         """
-        Function to compute the log likelihood of the model parameters according to data x and label y.
+        Compute the log-likelihood given predictions and true labels.
 
         Args:
-            preds: the predicted labels.
-            y: the label array.
+            preds: Predicted probabilities (from the sigmoid function).
+            y: True labels (0 or 1).
 
         Returns:
-            log_l: the log likelihood of the model parameters according to data x and label y.
+            log_l: The log-likelihood of the model given data.
         """
-        ##############################
-        ###     YOUR CODE HERE     ###
-        ##############################
+        # Ensure numerical stability by clipping predictions
+        preds = np.clip(preds, 1e-10, 1 - 1e-10)
+
+        # Calculate the log-likelihood
+        log_l = np.mean(y * np.log(preds) + (1 - y) * np.log(1 - preds))
         return log_l
     
     def update_theta(self, gradient: np.array, lr : float = 0.5):
@@ -48,13 +48,10 @@ class LogisticRegression:
         Returns:
             None
         """
-        ##############################
-        ###     YOUR CODE HERE     ###
-        ##############################
-        pass
+        self.parameters += lr * gradient
         
     @staticmethod
-    def compute_gradient(x : np.array, y: np.array, preds: np.array) -> np.array:
+    def compute_gradient(x: np.array, y: np.array, preds: np.array) -> np.array:
         """
         Function to compute the gradient of the log likelihood.
 
@@ -66,8 +63,7 @@ class LogisticRegression:
         Returns:
             gradient: the gradient of the log likelihood.
         """
-        ##############################
-        ###     YOUR CODE HERE     ###
-        ##############################
+        errors = y - preds
+        gradient = np.dot(x.T, errors) / x.shape[0]
         return gradient
 
